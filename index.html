@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" role="main">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
+  <!-- Bootstrap CSS for grid system and RTL support -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- Header / Hero Section -->
-  <header>
-    <div>
+  <header class="hero">
+    <div class="hero-content">
       <!-- Ask Copilot to teach you about `.svg`. 🙂 You'll need to resize the logo with CSS. -->
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" />
+      <img class="logo" src="img/intel-header-logo.svg" alt="Intel Logo" />
       <!-- Main Heading -->
       <h1>
         Sustainability Through the Ages
@@ -27,117 +29,436 @@
     </div>
   </header>
 
-  <!-- Timeline Cards Section -->
-  <section>
+  <!-- Timeline Carousel Section -->
+  <section class="container my-5">
+    <!-- container: centers the carousel, my-5: adds margin top and bottom -->
+    
+    <h2 class="text-center mb-4">Sustainability Timeline</h2>
+    <!-- text-center: centers the heading, mb-4: adds margin bottom -->
+    
+    <!-- Bootstrap Carousel -->
+    <div id="timelineCarousel" class="carousel slide" data-bs-ride="false">
+      <!-- id: unique identifier for the carousel -->
+      <!-- carousel slide: Bootstrap classes that create the carousel -->
+      <!-- data-bs-ride="false": prevents auto-play (user controls navigation) -->
+      
+      <!-- Carousel Indicators (dots at bottom) -->
+      <div class="carousel-indicators">
+        <!-- Shows which slide is currently active -->
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+        <button type="button" data-bs-target="#timelineCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+      </div>
 
-    <!-- Card 1: 1968 -->
-    <div>
-      <h2>1968</h2>
-      <h3>Intel Founded</h3>
-      <!-- Add image -->
-      <p>
-        Robert Noyce and Gordon Moore rename the newly formed company 
-        NM Electronics to Intel Corporation, laying the foundation for 
-        decades of technological innovation.
-      </p>
+      <!-- Carousel Inner Container (holds all slides) -->
+      <div class="carousel-inner">
+        
+        <!-- Slide 1: 1968 -->
+        <div class="carousel-item active">
+          <!-- carousel-item: each slide in the carousel -->
+          <!-- active: marks this as the first visible slide -->
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+              <div class="card">
+                <h2>1968</h2>
+                <h3>Intel Founded</h3>
+                <div class="card-media">
+                  <img class="card-image" src="img/1.jpg" alt="Intel headquarters, 1968" />
+                  <div class="card-overlay">
+                    <p>
+                      Robert Noyce and Gordon Moore rename the newly formed company 
+                      NM Electronics to Intel Corporation, laying the foundation for 
+                      decades of technological innovation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: 1971 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+              <div class="card">
+                <h2>1971</h2>
+                <h3>First Microprocessor</h3>
+                <div class="card-media">
+                  <img class="card-image" src="img/2.jpg" alt="Intel 4004 microprocessor" />
+                  <div class="card-overlay">
+                    <p>
+                      Intel debuts the 4004, the world's first commercial microprocessor, 
+                      igniting the microprocessor revolution and propelling the future 
+                      of computing devices.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: 1978 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+              <div class="card">
+                <h2>1978</h2>
+                <h3>8086 Processor</h3>
+                <div class="card-media">
+                  <img class="card-image" src="img/3.jpg" alt="Intel 8086 processor" />
+                  <div class="card-overlay">
+                    <p>
+                      Launch of the 8086 processor, establishing the x86 architecture 
+                      that drives countless PCs and servers in the modern era.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4: 1985 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+              <div class="card">
+                <h2>1985</h2>
+                <h3>386 Processor</h3>
+                <div class="card-media">
+                  <img class="card-image" src="img/4.jpg" alt="Intel 386 processor" />
+                  <div class="card-overlay">
+                    <p>
+                      Intel introduces the 386 processor with 32-bit architecture, 
+                      ushering in a new era of performance and multitasking for 
+                      personal computers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 5: 2006 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+              <div class="card">
+                <h2>2006</h2>
+                <h3>Peak GHG Emissions</h3>
+                <div class="card-media">
+                  <img class="card-image" src="img/1.jpg" alt="Factory emissions and abatement" />
+                  <div class="card-overlay">
+                    <p>
+                      This year marks Intel's highest annual greenhouse gas emissions 
+                      for operations. Over subsequent years, Intel invests heavily in 
+                      chemical abatement, renewable energy, and energy-efficient 
+                      manufacturing to reverse this trend.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 6: 2020 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+              <div class="card">
+                <h2>2020</h2>
+                <h3>RISE Strategy</h3>
+                <div class="card-media">
+                  <img class="card-image" src="img/2.jpg" alt="RISE strategy iconography" />
+                  <div class="card-overlay">
+                    <p>
+                      Intel launches its RISE (Responsible, Inclusive, Sustainable, 
+                      Enabling) strategy and 2030 goals, aiming to drive industry-wide 
+                      progress on climate action, water stewardship, and waste reduction.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 7: 2022 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+              <div class="card">
+                <h2>2022</h2>
+                <h3>Net-Zero By 2040</h3>
+                <div class="card-media">
+                  <img class="card-image" src="img/3.jpg" alt="Net-zero commitment" />
+                  <div class="card-overlay">
+                    <p>
+                      Intel announces its commitment to achieve net-zero greenhouse 
+                      gas emissions (Scope 1 and 2) across its global operations 
+                      by 2040, building on years of environmental initiatives.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 8: 2023 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+              <div class="card">
+                <h2>2023</h2>
+                <h3>Renewable Electricity</h3>
+                <div class="card-media">
+                  <img class="card-image" src="img/4.jpg" alt="Renewable energy" />
+                  <div class="card-overlay">
+                    <p>
+                      The company achieves 99% renewable electricity usage worldwide, 
+                      helping to drastically lower carbon emissions and driving progress 
+                      toward Intel's long-term sustainability goals.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 9: 2024 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+              <div class="card">
+                <h2>2024</h2>
+                <h3>Sustainability Summit</h3>
+                <div class="card-media">
+                  <img class="card-image" src="img/1.jpg" alt="Sustainability summit" />
+                  <div class="card-overlay">
+                    <p>
+                      Intel hosts its first Sustainability Summit, uniting suppliers, 
+                      government officials, and industry leaders to collaborate on 
+                      next-generation sustainable semiconductor manufacturing.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Previous Button (left arrow) -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#timelineCarousel" data-bs-slide="prev">
+        <!-- carousel-control-prev: positions the button on the left -->
+        <!-- data-bs-slide="prev": tells carousel to go to previous slide -->
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <!-- carousel-control-prev-icon: displays the left arrow icon -->
+        <span class="visually-hidden">Previous</span>
+        <!-- visually-hidden: text for screen readers only -->
+      </button>
+
+      <!-- Next Button (right arrow) -->
+      <button class="carousel-control-next" type="button" data-bs-target="#timelineCarousel" data-bs-slide="next">
+        <!-- carousel-control-next: positions the button on the right -->
+        <!-- data-bs-slide="next": tells carousel to go to next slide -->
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <!-- carousel-control-next-icon: displays the right arrow icon -->
+        <span class="visually-hidden">Next</span>
+      </button>
+
     </div>
+    
+    <p class="tip">Use arrows or dots to navigate | Hover over cards to learn more!</p>
+    <!-- Updated tip text for carousel navigation -->
+    
+  </section>
 
-    <!-- Card 2: 1971 -->
-    <div>
-      <h2>1971</h2>
-      <h3>First Microprocessor</h3>
-      <!-- Add image -->
-      <p>
-        Intel debuts the 4004, the world's first commercial microprocessor, 
-        igniting the microprocessor revolution and propelling the future 
-        of computing devices.
-      </p>
-    </div>
-
-    <!-- Card 3: 1978 -->
-    <div>
-      <h2>1978</h2>
-      <h3>8086 Processor</h3>
-      <!-- Add image -->
-      <p>
-        Launch of the 8086 processor, establishing the x86 architecture 
-        that drives countless PCs and servers in the modern era.
-      </p>
-    </div>
-
-    <!-- Card 4: 1985 -->
-    <div>
-      <h2>1985</h2>
-      <h3>386 Processor</h3>
-      <!-- Add image -->
-      <p>
-        Intel introduces the 386 processor with 32-bit architecture, 
-        ushering in a new era of performance and multitasking for 
-        personal computers.
-      </p>
-    </div>
-
-    <!-- Card 5: 2006 -->
-    <div>
-      <h2>2006</h2>
-      <h3>Peak GHG Emissions</h3>
-      <!-- Add image -->
-      <p>
-        This year marks Intel's highest annual greenhouse gas emissions 
-        for operations. Over subsequent years, Intel invests heavily in 
-        chemical abatement, renewable energy, and energy-efficient 
-        manufacturing to reverse this trend.
-      </p>
-    </div>
-
-    <!-- Card 6: 2020 -->
-    <div>
-      <h2>2020</h2>
-      <h3>RISE Strategy</h3>
-      <!-- Add image -->
-      <p>
-        Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-        Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-        progress on climate action, water stewardship, and waste reduction.
-      </p>
-    </div>
-
-    <!-- Card 7: 2022 -->
-    <div>
-      <h2>2022</h2>
-      <h3>Net-Zero By 2040</h3>
-      <!-- Add image -->
-      <p>
-        Intel announces its commitment to achieve net-zero greenhouse 
-        gas emissions (Scope 1 and 2) across its global operations 
-        by 2040, building on years of environmental initiatives.
-      </p>
-    </div>
-
-    <!-- Card 8: 2023 -->
-    <div>
-      <h2>2023</h2>
-      <h3>Renewable Electricity</h3>
-      <!-- Add image -->
-      <p>
-        The company achieves 99% renewable electricity usage worldwide, 
-        helping to drastically lower carbon emissions and driving progress 
-        toward Intel's long-term sustainability goals.
-      </p>
-    </div>
-
-    <!-- Card 9: 2024 -->
-    <div>
-      <h2>2024</h2>
-      <h3>Sustainability Summit</h3>
-      <!-- Add image -->
-      <p>
-        Intel hosts its first Sustainability Summit, uniting suppliers, 
-        government officials, and industry leaders to collaborate on 
-        next-generation sustainable semiconductor manufacturing.
-      </p>
+  <!-- New Three-Column Section using Bootstrap Grid -->
+  <section class="container my-5">
+    <!-- Container: centers content and adds responsive padding -->
+    
+    <!-- Row: creates a horizontal group for columns -->
+    <div class="row g-4">
+      <!-- g-4 adds spacing (gutters) between columns -->
+      
+      <!-- Column 1: takes 4 out of 12 grid units on medium+ screens, full width on mobile -->
+      <div class="col-12 col-md-4">
+        <div class="border rounded overflow-hidden">
+          <!-- border: adds border, rounded: rounds corners, overflow-hidden: clips image to rounded corners -->
+          <img src="img/2.jpg" alt="Innovation" class="w-100" />
+          <!-- w-100: makes image full width of its container -->
+          <div class="p-4">
+            <!-- p-4: adds padding inside the text area -->
+            <h3>Innovation</h3>
+            <p>
+              Intel continues to push the boundaries of what's possible with 
+              cutting-edge processor technology and research into next-generation 
+              computing solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Column 2 -->
+      <div class="col-12 col-md-4">
+        <div class="border rounded overflow-hidden">
+          <img src="img/3.jpg" alt="Sustainability" class="w-100" />
+          <div class="p-4">
+            <h3>Sustainability</h3>
+            <p>
+              Our commitment to environmental responsibility drives us to reduce 
+              emissions, conserve water, and create products that enable a more 
+              sustainable future.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Column 3 -->
+      <div class="col-12 col-md-4">
+        <div class="border rounded overflow-hidden">
+          <img src="img/4.jpg" alt="Community" class="w-100" />
+          <div class="p-4">
+            <h3>Community</h3>
+            <p>
+              Intel invests in communities worldwide through education programs, 
+              partnerships, and initiatives that create opportunities for the 
+              next generation of innovators.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+
+  <!-- Newsletter Subscription Form Section -->
+  <section class="container my-5 py-5" style="background-color: #f2f8f6;">
+    <!-- container: centers content, my-5: margin top/bottom, py-5: padding top/bottom -->
+    
+    <div class="row justify-content-center">
+      <!-- justify-content-center: centers the column horizontally -->
+      
+      <div class="col-12 col-md-8 col-lg-6">
+        <!-- Responsive width: full on mobile, 8/12 on tablet, 6/12 on desktop -->
+        
+        <h2 class="text-center mb-3">Subscribe to Our Sustainability Newsletter</h2>
+        <!-- text-center: centers the text, mb-3: margin bottom -->
+        
+        <p class="text-center mb-4">
+          Stay updated on Intel's latest sustainability initiatives and environmental progress.
+        </p>
+        <!-- mb-4: margin bottom of 4 units -->
+        
+        <!-- Form element -->
+        <form>
+          <!-- Name input field -->
+          <div class="mb-3">
+            <!-- mb-3: margin bottom for spacing between form fields -->
+            <label for="subscriberName" class="form-label">Name</label>
+            <!-- form-label: Bootstrap class for form labels -->
+            <input type="text" class="form-control" id="subscriberName" placeholder="Enter your name" required />
+            <!-- form-control: Bootstrap class that styles the input field -->
+            <!-- required: makes this field mandatory -->
+          </div>
+          
+          <!-- Email input field -->
+          <div class="mb-3">
+            <label for="subscriberEmail" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="subscriberEmail" placeholder="Enter your email" required />
+            <!-- type="email": validates that input is an email format -->
+          </div>
+          
+          <!-- Checkbox for terms agreement -->
+          <div class="mb-3 form-check">
+            <!-- form-check: Bootstrap class for checkbox styling -->
+            <input type="checkbox" class="form-check-input" id="agreeTerms" required />
+            <!-- form-check-input: styles the checkbox -->
+            <label class="form-check-label" for="agreeTerms">
+              I agree to receive emails from Intel
+            </label>
+          </div>
+          
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary w-100">
+            <!-- btn: base button class -->
+            <!-- btn-primary: makes button blue (primary color) -->
+            <!-- w-100: makes button full width -->
+            Subscribe Now
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white py-4">
+    <!-- bg-dark: dark background color -->
+    <!-- text-white: white text color -->
+    <!-- py-4: padding top and bottom -->
+    
+    <div class="container">
+      <!-- container: centers footer content -->
+      
+      <div class="row">
+        <!-- row: creates a grid row -->
+        
+        <!-- Footer navigation links -->
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <!-- col-12: full width on mobile -->
+          <!-- col-md-6: half width on medium+ screens -->
+          <!-- mb-3: margin bottom on mobile, mb-md-0: no margin on medium+ screens -->
+          
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <!-- list-unstyled: removes default list bullets and padding -->
+            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+            <!-- text-white: keeps link white -->
+            <!-- text-decoration-none: removes underline from link -->
+            <li><a href="#" class="text-white text-decoration-none">Terms of Use</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Sustainability Reports</a></li>
+          </ul>
+        </div>
+        
+        <!-- Copyright notice -->
+        <div class="col-12 col-md-6 text-md-end">
+          <!-- text-md-end: aligns text to right on medium+ screens -->
+          
+          <p class="mb-1">&copy; 2026 Intel Corporation. All rights reserved.</p>
+          <!-- &copy; creates the copyright symbol © -->
+          <!-- mb-1: small margin bottom -->
+          
+          <p class="mb-0">
+            <!-- mb-0: no margin bottom -->
+            <small>Intel and the Intel logo are trademarks of Intel Corporation.</small>
+            <!-- small: makes text smaller -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JavaScript Bundle (required for carousel functionality) -->
+  <!-- This enables interactive components like carousel, modals, dropdowns, etc. -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- RTL Language Detection Script -->
+  <!-- This script automatically detects language changes and applies RTL layout -->
+  <script src="rtl-detector.js"></script>
+
 </body>
 </html>
